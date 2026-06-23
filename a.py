@@ -46,6 +46,18 @@ def _run_tests() -> int:
     return 0 if all_passed else 1
 
 
+class Solution:
+    def test(self, a):
+
+        b = set(a);
+        print(b);
+        b.add("j")
+        print(b)
+        return 0;
+
 if __name__ == "__main__":
     # Run built-in tests when executed directly
-    raise SystemExit(_run_tests())
+    # raise SystemExit(_run_tests())
+    # solution = Solution()
+    # solution.test("asdasdsadrkdhasi")
+    print(1.2 - 1.0)
