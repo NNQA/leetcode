@@ -1,0 +1,23 @@
+from collections import defaultdict
+
+
+class Solution:
+    def fourSumCount(
+        self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]
+    ) -> int:
+        n, hm, res = len(nums1), defaultdict(int), 0
+
+        print("hm: ", hm)
+        for i in range(n):
+            for j in range(n):
+                hm[nums1[i] + nums2[j]] += 1
+        for k in range(n):
+            for l in range(n):
+                res += hm[0 - (nums3[k] + nums4[l])]
+        return res
+
+
+solution = Solution()
+# print(solution.threeSum([-1,0,1,2,-1,-4]))
+
+print(solution.fourSumCount([1, 2], nums2=[-2, -1], nums3=[-1, 2], nums4=[0, 2]))
