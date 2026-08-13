@@ -19,7 +19,4 @@ class Solution:
         print(nums)
 
 
-sol = Solution()
-sol.nextPermutation([1, 2, 3, 4, 2])
-sol.nextPermutation([3, 2, 1])
-sol.nextPermutation([1, 1, 5])
+
