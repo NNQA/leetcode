@@ -4,14 +4,11 @@ from functools import reduce
 arr1 = [2, 3, 4, 5]
 arr2 = [9, 12, 27, 30, 33]
 
-g = reduce(gcd, arr2)
 
-print(g)
-ans = None
+row = 4
+col = 0
 
-for x in arr1:
-    if g % x == 0:
-        if ans is None or x < ans:
-            ans = x
-
-print(ans)
+for i in range(9):
+    print("row", 3 * (row // 3) + i // 3)
+for i in range(9):
+    print("col", 3 * (col // 3) + i % 3)
