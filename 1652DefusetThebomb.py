@@ -1,0 +1,23 @@
+class Solution:
+    def decrypt(self, code: List[int], k: int) -> List[int]:
+        n = len(code)
+        res = [0] * n
+
+        l = 0
+        cur_sum = 0
+        for r in range(n + abs(k)):
+            cur_sum += code[r % n]
+
+            if r - l + 1 > abs(k):
+                cur_sum -= code[l % n]
+                l = (l + 1) % n
+            if r - l + 1 == k:
+                if k > 0:
+                    res[(l - 1) % n] = cur_sum
+                if k < 0:
+                    res[(r + 1) % n] = cur_sum
+        return res
+
+
+sol = Solution()
+print(sol.decrypt([5, 7, 1, 4], 3))
